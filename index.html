@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpesaAI — Angaca Labs</title>
+  <meta name="description" content="SpesaAI — Il tracker spese intelligente con AI. Supporto, Privacy Policy e Termini di Servizio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0D7C66;
+      --primary-dark: #0A5E4D;
+      --primary-muted: rgba(13, 124, 102, 0.08);
+      --gold: #F59E0B;
+      --gold-muted: rgba(245, 158, 11, 0.1);
+      --bg: #FAFAF8;
+      --bg-dark: #0D1B1E;
+      --card: #FFFFFF;
+      --text: #1A1A1A;
+      --text-secondary: #6B7280;
+      --text-muted: #9CA3AF;
+      --border: #E5E7EB;
+      --success: #10B981;
+      --danger: #EF4444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bg-dark);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      position: relative;
+    }
+    .hero-sparkle {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      font-size: 16px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #FFF;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+    }
+
+    /* ── Sections ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type { border-bottom: none; }
+    h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    p { margin-bottom: 16px; color: var(--text-secondary); }
+    ul {
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+    }
+    a { color: var(--primary); }
+
+    /* ── Support Card ── */
+    .support-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .support-card .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 24px;
+    }
+    .support-card h3 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+    .support-card p { margin-bottom: 0; font-size: 14px; }
+    .support-card a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 540px) {
+      .support-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 13px; }
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--primary); }
+
+    /* ── Legal content formatting ── */
+    .legal-content h3 {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .legal-content h3:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Spesa<span>AI</span></a>
+      <div class="nav-links">
+        <a href="#support">Supporto</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Termini</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-icon">
+      <span style="color: #FFF;">€</span>
+      <span class="hero-sparkle">✦</span>
+    </div>
+    <h1>SpesaAI</h1>
+    <p>Il tracker spese intelligente con AI insights. Semplice, privato, potente.</p>
+    <div class="hero-badges">
+      <span class="badge"><span class="badge-dot" style="background: var(--success);"></span>Dati 100% locali</span>
+      <span class="badge"><span class="badge-dot" style="background: var(--gold);"></span>AI-powered</span>
+      <span class="badge"><span class="badge-dot" style="background: var(--primary);"></span>iOS & Android</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Support -->
+    <section id="support">
+      <h2>Supporto</h2>
+      <p class="section-subtitle">Hai bisogno di aiuto? Siamo qui per te.</p>
+
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="icon" style="background: var(--primary-muted);">✉️</div>
+          <h3>Email</h3>
+          <p><a href="mailto:support@angacalabs.com">support@angacalabs.com</a></p>
+        </div>
+        <div class="support-card">
+          <div class="icon" style="background: var(--gold-muted);">⏱</div>
+          <h3>Tempi di risposta</h3>
+          <p>Rispondiamo entro 48 ore lavorative</p>
+        </div>
+      </div>
+
+      <h3>FAQ</h3>
+
+      <p><strong>I miei dati sono al sicuro?</strong><br>
+      Sì. Tutte le tue spese sono salvate esclusivamente sul tuo dispositivo. Non abbiamo accesso ai tuoi dati finanziari.</p>
+
+      <p><strong>Come funzionano le feature AI?</strong><br>
+      Quando usi la categorizzazione automatica o gli insight AI (funzionalità Pro), solo la descrizione della spesa o un riepilogo aggregato viene inviato in modo sicuro al servizio AI per l'analisi. Nessun dato personale viene condiviso.</p>
+
+      <p><strong>Come gestisco il mio abbonamento?</strong><br>
+      Puoi gestire o cancellare il tuo abbonamento SpesaAI Pro direttamente dalle impostazioni del tuo dispositivo (App Store per iOS, Play Store per Android).</p>
+
+      <p><strong>Posso recuperare i miei dati se cambio telefono?</strong><br>
+      Attualmente i dati sono salvati localmente. Puoi esportare le tue spese come CSV dalle impostazioni dell'app. Stiamo lavorando a una soluzione di backup cloud per il futuro.</p>
+
+      <p><strong>L'app funziona offline?</strong><br>
+      Sì. L'inserimento spese, il budget e le statistiche funzionano completamente offline. Solo le funzionalità AI Pro richiedono una connessione internet.</p>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p class="section-subtitle">Ultimo aggiornamento: Marzo 2026</p>
+
+      <div class="legal-content">
+        <h3>Introduzione</h3>
+        <p>SpesaAI ("l'App") è un'applicazione di tracciamento spese personali sviluppata da Angaca Labs. Ci impegniamo a proteggere la tua privacy. Questa informativa spiega quali dati raccogliamo, come li utilizziamo e i tuoi diritti.</p>
+
+        <h3>Dati salvati localmente sul tuo dispositivo</h3>
+        <p>Tutti i tuoi dati finanziari sono salvati esclusivamente sul tuo dispositivo tramite un database locale. Questo include:</p>
+        <ul>
+          <li>Registrazioni delle spese (importo, categoria, descrizione, data)</li>
+          <li>Configurazioni del budget</li>
+          <li>Impostazioni delle spese ricorrenti</li>
+          <li>Preferenze dell'app (nome, tema, impostazioni notifiche)</li>
+        </ul>
+        <p><strong>Non abbiamo accesso a questi dati. Non lasciano mai il tuo dispositivo a meno che tu non li esporti esplicitamente.</strong></p>
+
+        <h3>Dati elaborati da servizi terzi</h3>
+        <p><strong>Funzionalità AI (solo abbonati Pro):</strong> Quando utilizzi le funzionalità AI (categorizzazione automatica e insight sulle spese), le descrizioni delle spese e i riepiloghi aggregati vengono inviati all'API di Anthropic (Claude) per l'elaborazione. Questi dati sono trasmessi in modo sicuro tramite HTTPS, non vengono conservati da Anthropic oltre la durata della richiesta, non vengono utilizzati per addestrare modelli AI, e sono soggetti alla <a href="https://www.anthropic.com/privacy" target="_blank">privacy policy di Anthropic</a>. Nessuna informazione personale identificabile viene inviata ai servizi AI.</p>
+        <p><strong>Gestione abbonamenti:</strong> Se ti abboni a SpesaAI Pro, l'acquisto viene elaborato da Apple (App Store) o Google (Play Store). Utilizziamo RevenueCat per gestire lo stato dell'abbonamento. RevenueCat riceve un identificativo utente anonimo e lo stato dell'abbonamento. Nessun dato finanziario (dettagli della carta di credito) viene gestito da noi. <a href="https://www.revenuecat.com/privacy" target="_blank">Privacy policy di RevenueCat</a>.</p>
+
+        <h3>Dati che NON raccogliamo</h3>
+        <ul>
+          <li>Identificazione personale (nome, email, numero di telefono)</li>
+          <li>Dati di localizzazione</li>
+          <li>Contatti o dati del calendario</li>
+          <li>Cronologia di navigazione</li>
+          <li>Informazioni finanziarie (conti bancari, carte di credito)</li>
+          <li>Dati di analytics o tracciamento dell'utilizzo</li>
+        </ul>
+
+        <h3>Notifiche</h3>
+        <p>Se abiliti i promemoria giornalieri, la programmazione delle notifiche viene gestita interamente sul tuo dispositivo. Nessun dato viene inviato a server esterni.</p>
+
+        <h3>Esportazione dati</h3>
+        <p>Puoi esportare i tuoi dati delle spese come file CSV in qualsiasi momento. Il file viene generato localmente e condiviso tramite le funzionalità native del tuo dispositivo.</p>
+
+        <h3>Cancellazione dati</h3>
+        <p>Poiché tutti i dati sono salvati localmente sul tuo dispositivo, eliminando l'app rimuovi permanentemente tutti i tuoi dati. Puoi eliminare singole spese in qualsiasi momento dall'app. Non è necessaria alcuna cancellazione lato server.</p>
+
+        <h3>Privacy dei minori</h3>
+        <p>SpesaAI non è destinata a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente dati da minori.</p>
+
+        <h3>Modifiche a questa informativa</h3>
+        <p>Potremmo aggiornare questa informativa periodicamente. Le modifiche saranno riflesse nella data di "Ultimo aggiornamento". L'uso continuato dell'app costituisce accettazione dell'informativa aggiornata.</p>
+
+        <h3>Contatti</h3>
+        <p>Per domande su questa Privacy Policy: <a href="mailto:privacy@angacalabs.com">privacy@angacalabs.com</a></p>
+      </div>
+    </section>
+
+    <!-- Terms of Service -->
+    <section id="terms">
+      <h2>Termini di Servizio</h2>
+      <p class="section-subtitle">Ultimo aggiornamento: Marzo 2026</p>
+
+      <div class="legal-content">
+        <h3>1. Accettazione dei termini</h3>
+        <p>Scaricando, installando o utilizzando SpesaAI ("l'App"), accetti questi Termini di Servizio. Se non sei d'accordo, non utilizzare l'App.</p>
+
+        <h3>2. Descrizione del servizio</h3>
+        <p>SpesaAI è un'applicazione di tracciamento spese personali che ti permette di registrare e categorizzare le spese quotidiane, impostare e monitorare budget mensili, visualizzare statistiche e grafici sulle spese, ricevere insight AI sulle tue abitudini di spesa (abbonamento Pro), ed esportare i dati delle spese.</p>
+        <p>L'App è progettata esclusivamente per uso personale e informativo e <strong>non costituisce consulenza finanziaria</strong>.</p>
+
+        <h3>3. Account e dati</h3>
+        <p>SpesaAI non richiede la creazione di un account. Tutti i dati sono salvati localmente sul tuo dispositivo. Sei responsabile del mantenimento dei backup dei tuoi dati.</p>
+
+        <h3>4. Abbonamenti</h3>
+        <p>L'App offre un abbonamento opzionale a pagamento ("SpesaAI Pro") che sblocca funzionalità aggiuntive tra cui insight AI ed esportazione CSV.</p>
+        <ul>
+          <li><strong>Abbonamento mensile:</strong> Fatturato mensilmente, si rinnova automaticamente salvo cancellazione.</li>
+          <li><strong>Abbonamento annuale:</strong> Fatturato annualmente, si rinnova automaticamente salvo cancellazione.</li>
+          <li><strong>Acquisto lifetime:</strong> Pagamento una tantum per accesso permanente alle funzionalità Pro.</li>
+        </ul>
+        <p>Il pagamento viene elaborato tramite Apple App Store o Google Play Store. Gli abbonamenti si rinnovano automaticamente salvo cancellazione almeno 24 ore prima della fine del periodo di fatturazione corrente. Puoi gestire e cancellare gli abbonamenti attraverso le impostazioni del tuo dispositivo.</p>
+
+        <h3>5. Funzionalità AI</h3>
+        <p>Gli abbonati Pro hanno accesso a funzionalità basate sull'intelligenza artificiale. Queste funzionalità utilizzano servizi AI di terze parti (Anthropic Claude), forniscono suggerimenti e analisi che non devono essere considerati consulenza finanziaria, potrebbero non essere sempre accurati, e sono soggetti a disponibilità.</p>
+
+        <h3>6. Uso accettabile</h3>
+        <p>Ti impegni a non utilizzare l'App per scopi illegali, non tentare di decompilare o estrarre il codice sorgente dall'App, non utilizzare l'App per elaborare dati per conto di terzi a fini commerciali, e non tentare di aggirare i requisiti di abbonamento.</p>
+
+        <h3>7. Proprietà intellettuale</h3>
+        <p>L'App, inclusi design, codice, grafica e contenuti, è di proprietà di Angaca Labs e protetta dalle leggi sulla proprietà intellettuale. Ti viene concessa una licenza limitata, non esclusiva e non trasferibile per l'uso personale dell'App.</p>
+
+        <h3>8. Esclusione di garanzie</h3>
+        <p>L'App è fornita "così com'è" senza garanzie di alcun tipo. <strong>SpesaAI non è un consulente finanziario. Non prendere decisioni finanziarie basandoti esclusivamente sulle informazioni fornite dall'App.</strong></p>
+
+        <h3>9. Limitazione di responsabilità</h3>
+        <p>Nella misura massima consentita dalla legge, Angaca Labs non sarà responsabile per danni indiretti, incidentali, speciali o consequenziali derivanti dall'utilizzo dell'App, incluse eventuali perdite finanziarie.</p>
+
+        <h3>10. Modifiche ai termini</h3>
+        <p>Ci riserviamo il diritto di modificare questi Termini in qualsiasi momento. Le modifiche hanno effetto dalla pubblicazione. L'uso continuato dell'App costituisce accettazione dei Termini modificati.</p>
+
+        <h3>11. Legge applicabile</h3>
+        <p>Questi Termini sono regolati dalla legge italiana. Qualsiasi controversia sarà risolta presso i tribunali di Milano, Italia.</p>
+
+        <h3>12. Contatti</h3>
+        <p>Per domande su questi Termini: <a href="mailto:legal@angacalabs.com">legal@angacalabs.com</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Angaca Labs. Tutti i diritti riservati.</p>
+    <p style="margin-top: 8px;">
+      <a href="#privacy">Privacy Policy</a> · <a href="#terms">Termini di Servizio</a> · <a href="mailto:support@angacalabs.com">Contatti</a>
+    </p>
+  </footer>
+
+</body>
+</html>
