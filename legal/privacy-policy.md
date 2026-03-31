@@ -1,11 +1,11 @@
-# Privacy Policy — SpesaAI
+# Privacy Policy — Pockly
 
 **Last updated: March 2026**
 **Developer: Angaca Labs**
 
 ## Introduction
 
-SpesaAI ("the App") is a personal expense tracking application developed by Angaca Labs. We are committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and your rights.
+Pockly ("the App") is a personal expense tracking application developed by Angaca Labs. We are committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and your rights.
 
 ## Data We Collect
 
@@ -30,7 +30,7 @@ When you use AI-powered features (automatic categorization and spending insights
 No personally identifiable information (name, email, address) is sent to AI services.
 
 #### Subscription Management
-If you subscribe to SpesaAI Pro, your purchase is processed by Apple (App Store) or Google (Play Store) through their respective in-app purchase systems. We use RevenueCat to manage subscription status. RevenueCat receives:
+If you subscribe to Pockly Pro, your purchase is processed by Apple (App Store) or Google (Play Store) through their respective in-app purchase systems. We use RevenueCat to manage subscription status. RevenueCat receives:
 - An anonymous user identifier
 - Subscription status and purchase history
 - No financial data (credit card details are handled exclusively by Apple/Google)
@@ -58,7 +58,7 @@ Since all data is stored locally on your device:
 - No server-side data deletion is necessary as we store no data on servers
 
 ## Children's Privacy
-SpesaAI is not directed at children under 13. We do not knowingly collect data from children.
+Pockly is not directed at children under 13. We do not knowingly collect data from children.
 
 ## Changes to This Policy
 We may update this Privacy Policy from time to time. Changes will be reflected in the "Last updated" date. Continued use of the app constitutes acceptance of the updated policy.

@@ -1,15 +1,15 @@
-# Terms of Service — SpesaAI
+# Terms of Service — Pockly
 
 **Last updated: March 2026**
 **Developer: Angaca Labs**
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, or using SpesaAI ("the App"), you agree to these Terms of Service. If you do not agree, do not use the App.
+By downloading, installing, or using Pockly ("the App"), you agree to these Terms of Service. If you do not agree, do not use the App.
 
 ## 2. Description of Service
 
-SpesaAI is a personal expense tracking application that allows you to:
+Pockly is a personal expense tracking application that allows you to:
 - Record and categorize daily expenses
 - Set and monitor monthly budgets
 - View spending statistics and charts
@@ -20,12 +20,12 @@ The App is designed for personal, informational use only and does not constitute
 
 ## 3. Accounts and Data
 
-SpesaAI does not require account creation. All data is stored locally on your device. You are responsible for maintaining backups of your data.
+Pockly does not require account creation. All data is stored locally on your device. You are responsible for maintaining backups of your data.
 
 ## 4. Subscriptions
 
-### SpesaAI Pro
-The App offers an optional paid subscription ("SpesaAI Pro") that unlocks additional features including AI insights and CSV export.
+### Pockly Pro
+The App offers an optional paid subscription ("Pockly Pro") that unlocks additional features including AI insights and CSV export.
 
 - **Monthly subscription**: Billed monthly, auto-renews unless cancelled.
 - **Yearly subscription**: Billed annually, auto-renews unless cancelled.
@@ -66,7 +66,7 @@ The App is provided "as is" without warranties of any kind. Angaca Labs does not
 - AI-generated insights will be accurate or complete
 - The App will meet your specific financial management needs
 
-**SpesaAI is not a financial advisor. Do not make financial decisions based solely on information provided by the App.**
+**Pockly is not a financial advisor. Do not make financial decisions based solely on information provided by the App.**
 
 ## 9. Limitation of Liability
 
