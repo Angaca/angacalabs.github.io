@@ -1,0 +1,8 @@
+{
+  "minVersion": "1.0.2",
+  "enforcedAt": "2026-01-01T00:00:00.000Z",
+  "storeUrls": {
+    "ios": "TODO_IOS_STORE_URL",
+    "android": "TODO_ANDROID_STORE_URL"
+  }
+}
